@@ -1,0 +1,17 @@
+body{
+    background-color:#121212;
+    text-align:center;
+}
+
+h1{
+    color:#eee4e4;
+}
+
+p{
+    color:#f8f8f8;
+}
+
+footer{
+    position:absolute;
+    bottom: 10px;
+}
