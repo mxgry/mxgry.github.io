@@ -1,0 +1,53 @@
+body{
+    background-color: blanchedalmond;
+}
+
+#frame{
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 25%;
+    }
+
+#shape1{
+    stroke:black;
+    stroke-width:3px;
+    fill:#9fa7aa;
+}
+
+#shape2 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#24201f;
+
+}
+#shape3 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#d5a940;
+}
+#shape4 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#dbd1c8;
+}
+#shape5 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#a9aeb4;
+}
+#shape6 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#a91807;
+}
+#shape7 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#d3ccc6;
+}
+#shape8 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#676163;
+}

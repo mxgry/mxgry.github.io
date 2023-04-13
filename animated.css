@@ -1,0 +1,112 @@
+body{
+    background-color: blanchedalmond;
+}
+
+#frame{
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 25%;
+    }
+
+path{
+    -webkit-transition: 2s; 
+    transition: 1s;
+}
+
+path:hover{
+    transform: scale(.5,.5)
+}
+
+@keyframes color_change_1 {
+    
+    16% {fill: #a91807;}
+    32% {fill: #d5a940;}
+    48% {fill:#24201f;}
+    64% { fill: #9fa7aa;}
+    80%{fill: #676163;}
+    96%{fill: #dbd1c8;}
+}
+
+
+#shape1{
+    z-index: 4;
+    stroke:black;
+    stroke-width:3px;
+    fill:#9fa7aa;
+    transition: 1s;
+    animation-name: color_change_1;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-delay: 4s;
+
+}
+
+#shape1:hover{
+    transform: scale(2,2);
+
+}
+
+#shape2 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#24201f;
+    animation-name: color_change_1;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-delay: 3s;
+}
+#shape3 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#d5a940;
+    animation-name: color_change_1;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+#shape4 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#dbd1c8;
+    animation-name: color_change_1;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-delay: 5s;
+}
+#shape5 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#a9aeb4;
+    animation-name: color_change_1;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-delay: 4s;
+}
+#shape6 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#a91807;
+    animation-name: color_change_1;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+#shape7 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#d3ccc6;
+    animation-name: color_change_1;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-delay: 6s;
+}
+#shape8 {
+    stroke:black;
+    stroke-width:3px;
+    fill:#676163;
+    animation-name: color_change_1;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-delay: 5s;
+}
