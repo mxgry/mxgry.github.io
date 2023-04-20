@@ -137,7 +137,7 @@ class star {
         pop()
         }
     twinkle(){
-        this.radius1 = random(4, 6);
+        this.radius1 = random(4, 7);
         
         
         // if (this.radius1 < 9){
