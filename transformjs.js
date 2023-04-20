@@ -7,7 +7,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   r = height * .60;
   s = width * .45
-  theta = 90;
+  theta = 0;
   speed = .01;
 
   for (let i = 0; i < 75; i++) {
