@@ -1,0 +1,80 @@
+body{
+    background-color: black;
+    color: whitesmoke;
+    font-size: 150%;
+}
+.main{
+
+    margin-right: 10%;
+    margin-left: 50%;
+    
+}
+
+h1{
+    font-size: 400%;
+    text-align: center;
+}
+
+p{
+    margin-left: 30%;
+}
+
+h2{
+    display: block;
+    text-align: center;
+}
+
+a:link{
+    color:whitesmoke;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover{
+    color:aqua;
+}
+a:link{
+    color: red;
+}
+
+#click{
+    font-size: 80%;
+    display: block;
+    text-align: center;
+}
+
+#astroNames{
+    list-style: none;
+    
+    display: block;
+}
+
+
+#satNames{
+    display: block;
+    list-style: none;
+    
+}
+
+#av-orbit{
+    background-color: black;
+    color: white;
+}
+
+#earthandmoon{
+    position: fixed;
+    max-width: 50%;
+    margin-left: 0%;
+    z-index: -10;
+}
+
+
+#launch{
+    max-width: 50%;
+    margin-left: 0%;
+}
+
+#horizon{
+    width: 100%;
+    display: none;
+}
