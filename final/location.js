@@ -1,12 +1,12 @@
 let map;
 
-import { Loader } from '@googlemaps/js-api-loader';
+// import { Loader } from '@googlemaps/js-api-loader';
 
-const loader = new Loader({
-  apiKey: "AIzaSyABBr1pzKhH2U-mOH-J2NeyChnnlCGj7uE",
-  version: "weekly",
-  libraries: ["maps"]
-});
+// const loader = new Loader({
+//   apiKey: "AIzaSyABBr1pzKhH2U-mOH-J2NeyChnnlCGj7uE",
+//   version: "weekly",
+//   libraries: ["maps"]
+// });
 
 
 async function initMap() {
