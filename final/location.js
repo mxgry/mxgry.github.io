@@ -1,21 +1,8 @@
 let map;
 
-// import { Loader } from '@googlemaps/js-api-loader';
-
-// const loader = new Loader({
-//   apiKey: "AIzaSyABBr1pzKhH2U-mOH-J2NeyChnnlCGj7uE",
-//   version: "weekly",
-//   libraries: ["maps"]
-// });
-
 
 //Set up Firebase.
 // v9 compat packages are API compatible with v8 code
-//import firebase from 'firebase/compat/app';
-//import 'firebase/compat/auth';
-//import 'firebase/compat/firestore';
-
-//var firebase = Firebase("https://cs202location-default-rtdb.firebaseio.com");
 
 var individual = {
   sender: null,
@@ -53,9 +40,7 @@ clicks.orderByChild('timestamp').startAt(startTime).on('child_added',
 
 /**
  * Set up a Firebase with deletion on clicks older than expirySeconds
- * param {!google.maps.visualization.HeatmapLayer} heatmap The heatmap to
- * which points are added from Firebase.
- */
+  */
  function initFirebase(map) {
 
   // 10 minutes before current time.
@@ -100,36 +85,38 @@ clicks.orderByChild('timestamp').startAt(startTime).on('child_added',
 
 
 
+var windSpeed = 5; var windDirection = 0;
 
 //Get weather data.
 
- $.getJSON('https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=latest&station=9449880&product=wind&datum=STND&time_zone=gmt&units=metric&format=json', function(noaaData) {
-    if(noaaData == null){
-       const backupJSON = {
-        "metadata": {
-          "id": "9449880",
-          "name": "Friday Harbor",
-          "lat": "48.5453",
-          "lon": "-123.0125"
-        },
-        "data": [
-          {
-            "t": "2023-05-25 05:18",
-            "s": "0.78",
-            "d": "233.00",
-            "dr": "SW",
-            "g": "1.36",
-            "f": "0,0"
-          }
-        ]
-      }; 
-       const noaaData = JSON.parse(backupJSON);
-      }
-      let windSpeed = noaaData.data[0].s;
-      $('#wind').append('<li>' + 'Wind Speed: ' + windSpeed + ' KPH' + '</li>');
-      let windDirection = (noaaData.data[0].d);
-      $('#wind').append('<li>' + 'Wind Direction: ' + windDirection + ' Degrees' + '</li>');
-    });
+$.getJSON('https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=latest&station=9449880&product=wind&datum=STND&time_zone=gmt&units=metric&format=json', function(noaaData) {
+  if(noaaData == null){
+      const backupJSON = {
+      "metadata": {
+        "id": "9449880",
+        "name": "Friday Harbor",
+        "lat": "48.5453",
+        "lon": "-123.0125"
+      },
+      "data": [
+        {
+          "t": "2023-05-25 05:18",
+          "s": "0.78",
+          "d": "233.00",
+          "dr": "SW",
+          "g": "1.36",
+          "f": "0,0"
+        }
+      ]
+    }; 
+      const noaaData = JSON.parse(backupJSON);
+    }
+    windSpeed = noaaData.data[0].s;
+    $('#wind').append('<li>' + 'Wind Speed: ' + windSpeed + ' KPH' + '</li>');
+    windDirection = (noaaData.data[0].d);
+    $('#wind').append('<li>' + 'Wind Direction: ' + windDirection + ' Degrees' + '</li>');
+  });
+
 
 function getWind(){
   $.getJSON('https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?date=latest&station=9449880&product=wind&datum=STND&time_zone=gmt&units=metric&format=json', function(noaaData) {
@@ -233,10 +220,18 @@ dropButton.addEventListener("click", () => {
 });
 
 
-function updateBoat(marker){
+function updateBoat(marker, dir, time){
   const earthRad = 6378.14;
-  let windSpeed = getWind();
-  console.log(windSpeed);
+  //let windSpeed = getWind();
+  //console.log(windSpeed);
+
+  //find the distance travelled
+  let force = windSpeed;
+  let dist = time / 60 * force;
+
+  //given distance and direction, find the new location.
+
+
 
 }
 
