@@ -1,10 +1,17 @@
 h1{
+    font-size: medium;
     text-align: center;
     color: white;
     background-color: black;
+    font-size: 80vw;
 }
 
 #map {
-    height: 400px; /* The height is 400 pixels */
-    width: 100%; /* The width is the width of the web page */
+    height: 800px; /* The height is the width of the web page */
+    width: device-width; /* The width is the width of the web page */
+}
+
+#wind{
+    list-style-type: none;
+    list-style-position: inside;
 }

@@ -8,12 +8,25 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Sailboat Racing</title>
+        <link rel="icon" type="image/x-icon" href="sailboat2small.png">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="location.css">
+        <link rel="stylesheet" href="final.css">
         <script type="module" src="location.js"></script>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> 
+        <!--   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-SERVICE.js"></script> -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+        <script>
+            const firebaseApp = firebase.initializeApp({ /* Firebase config */ });
+            const db = firebaseApp.firestore();
+            const auth = firebaseApp.auth();
+        </script> -->
+
+
     </head>
     <body>
          <!--[if lt IE 7]>
@@ -24,8 +37,31 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/@googlemaps/js-api-loader@1.0.0/dist/index.min.js"></script>
 
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+            import { getAuth } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+            import { getDatabase } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+            import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+            // TODO: Add SDKs for Firebase products that you want to use
+            // https://firebase.google.com/docs/web/setup#available-libraries
+            // Your web app's Firebase configuration
+          
+            const firebaseConfig = {
+             apiKey: "AIzaSyAp179CaQzDjb4T2-1UF0ZJnCCGUNbOxN8",
+             authDomain: "cs202location.firebaseapp.com",
+             projectId: "cs202location",
+             storageBucket: "cs202location.appspot.com",
+             messagingSenderId: "73117222050",
+             appId: "1:73117222050:web:06667a24e074de3f0843fb"
+            };
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);          
+          </script>
+
         <script>
-(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+            (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
                 key: "AIzaSyABBr1pzKhH2U-mOH-J2NeyChnnlCGj7uE",
                 v: "weekly"
                 // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
@@ -39,7 +75,8 @@
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABBr1pzKhH2U-mOH-J2NeyChnnlCGj7uE&callback=initMap">
         </script>
 -->
-    <h1>Sail around the Haskell Plaza Islands</h1>
+    <h1>Sail Around the Haskell Plaza Islands</h1>
+    <ul id="wind"> </ul>
     
     <div id="map"></div>
     </body>
